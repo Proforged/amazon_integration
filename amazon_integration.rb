@@ -7,10 +7,8 @@ require_all 'lib'
 class AmazonIntegration < EndpointBase::Sinatra::Base
   set :logging, true
 
-  Honeybadger.configure do |config|
-    config.api_key = ENV['HONEYBADGER_KEY']
-    config.environment_name = ENV['RACK_ENV']
-  end
+  honeybadger_config = Honeybadger::Config.new(env: ENV['INTEGRATION_ENV'], api_key: ENV['HONEYBADGER_API_KEY'])
+  Honeybadger.start(honeybadger_config)
 
   # NOTE: Can only be used in development this will break production if left in uncommented.
   # configure :development do
