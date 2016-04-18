@@ -53,8 +53,7 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    honeybadger (1.16.3)
-      json
+    honeybadger (2.5.3)
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
