@@ -1,5 +1,6 @@
 @dir = File.expand_path(File.dirname(__FILE__))
 listen File.join(@dir, "../unicorn.sock"), :backlog => 1024
+listen 3000
 
 stderr_path "/usr/src/app/log/unicorn.stderr.log"
 stdout_path "/usr/src/app/log/unicorn.stdout.log"
